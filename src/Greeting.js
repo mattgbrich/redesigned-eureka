@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 const { userService } = window.SERVICES;
 
 function Greeting () {
-  const [user, setUser] = useState(userService.state);
+  const [user, setUser] = useState('');
 
   useEffect(() => {
     userService.subscribe(setUser);
-    return () => userService.unsubscribe(setUser);
+    return () => userService.unsubscribe();
   }, []);
 
   return (

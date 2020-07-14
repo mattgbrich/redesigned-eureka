@@ -5,11 +5,11 @@ import Greeting from './Greeting';
 const { userService } = window.SERVICES;
 
 function renderApp (user) {
-    ReactDOM.render(<App name={user.name} />, document.getElementById('app'));
+  ReactDOM.render(<App name={user.name} />, document.getElementById('app'));
 }
 userService.subscribe(renderApp);
 
-renderApp(userService.state);
+renderApp('');
 
 ReactDOM.render(<Greeting />, document.getElementById('greeting'));
 

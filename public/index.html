@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-      <script src="%PUBLIC_URL%/services.js"></script>
+    <script src="https://unpkg.com/@reactivex/rxjs@6.6.0/dist/global/rxjs.umd.js"></script>
+    <script src="%PUBLIC_URL%/services.js"></script>
   </head>
   <body>
     <script>
-        function setUser (user) {
-            window.SERVICES.userService.update(user);
-        }
+      function setUser (user) {
+        window.SERVICES.userService.next(user);
+      }
     </script>
     <button onclick="setUser({name: 'Mateo', job: 'Working Person'})">MATEO</button>
     <button onclick="setUser({name: 'Mortimer', job: 'Worker'})">MORTIMER</button>
